@@ -10,13 +10,24 @@ npm install
 ```
 
 ## Cấu hình biến môi trường
-Tạo file `.env` (hoặc cung cấp biến môi trường khi chạy):
-```env
-DISCORD_TOKEN=YOUR_BOT_TOKEN
-DISCORD_CLIENT_ID=YOUR_APP_ID
-DISCORD_GUILD_ID=YOUR_GUILD_ID # tùy chọn, dùng để đăng ký slash trong guild nhanh
-PREFIX=lv  # mặc định là "lv "
+1. Sao chép file `.env.example` thành `.env`:
+```bash
+cp .env.example .env
 ```
+
+2. Chỉnh sửa file `.env` và điền thông tin thực tế:
+```env
+DISCORD_TOKEN=YOUR_BOT_TOKEN_HERE
+DISCORD_CLIENT_ID=YOUR_CLIENT_ID_HERE
+DISCORD_GUILD_ID=YOUR_GUILD_ID_HERE
+PREFIX=lv 
+```
+
+3. Cập nhật Role IDs trong `modules/manager.ts`:
+```typescript
+const MANAGER_ROLES = ['YOUR_MANAGER_ROLE_ID_1', 'YOUR_MANAGER_ROLE_ID_2', 'YOUR_MANAGER_ROLE_ID_3', 'YOUR_MANAGER_USER_ID'];
+```
+
 Ghi chú: `PREFIX` sẽ được hiểu là có khoảng trắng sau, ví dụ `lv `.
 
 ## Chạy bot
