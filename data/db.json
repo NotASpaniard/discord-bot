@@ -1,0 +1,59 @@
+{
+  "users": {
+    "326514371876356097": {
+      "userId": "326514371876356097",
+      "balance": 100,
+      "daily": {
+        "last": null,
+        "streak": 0
+      },
+      "inventory": {},
+      "quests": [
+        {
+          "desc": "Gửi 1 ảnh",
+          "reward": 100,
+          "done": false
+        },
+        {
+          "desc": "Đề cập 3 người",
+          "reward": 120,
+          "done": false
+        },
+        {
+          "desc": "Dùng lệnh bất kỳ 5 lần",
+          "reward": 150,
+          "done": false
+        }
+      ]
+    },
+    "950742263938576384": {
+      "userId": "950742263938576384",
+      "balance": 0,
+      "daily": {
+        "last": 1759412524752,
+        "streak": 1
+      },
+      "inventory": {
+        "04": 4
+      },
+      "quests": [
+        {
+          "desc": "Dùng lệnh bất kỳ 5 lần",
+          "reward": 150,
+          "done": false
+        },
+        {
+          "desc": "Tham gia voice 10 phút",
+          "reward": 300,
+          "done": false
+        },
+        {
+          "desc": "Chat 50 tin nhắn",
+          "reward": 200,
+          "done": false
+        }
+      ]
+    }
+  },
+  "tents": {}
+}

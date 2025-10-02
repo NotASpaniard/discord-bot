@@ -5,7 +5,7 @@ import { getEnv } from './env.js';
 
 export async function loadCommands(client: Client): Promise<void> {
   // Thư mục chứa các module lệnh (mỗi file có thể export prefix/slash hoặc mảng slashes/prefixes)
-  const commandsDir = path.join(process.cwd(), 'src', 'modules');
+  const commandsDir = path.join(process.cwd(), 'modules');
   const env = getEnv();
 
   const slashJSON: any[] = [];
