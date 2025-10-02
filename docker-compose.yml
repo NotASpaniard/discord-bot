@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  discord-bot:
+    build: .
+    container_name: discord-bot
+    env_file:
+      - .env
+    restart: unless-stopped
+    # Uncomment if your bot needs to access the internet or specific ports
+    # ports:
+    #   - "3000:3000"
