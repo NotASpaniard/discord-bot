@@ -81,18 +81,8 @@ export async function loadCommands(client: Client): Promise<void> {
     }
   }
 
-  // Đăng ký slash khi khởi động trong guild để cập nhật nhanh; muốn global dùng tool `npm run register`
-  const rest = new REST({ version: '10' }).setToken(env.DISCORD_TOKEN);
-  if (env.DISCORD_GUILD_ID) {
-    // Đăng ký slash lệnh vào guild để cập nhật nhanh
-    await rest.put(
-      Routes.applicationGuildCommands(env.DISCORD_CLIENT_ID, env.DISCORD_GUILD_ID),
-      { body: slashJSON }
-    );
-    console.log(`Registered ${slashJSON.length} guild slash commands.`);
-  } else {
-    console.log('Skipping guild slash registration (no DISCORD_GUILD_ID).');
-  }
+  // Commands được đăng ký thông qua npm run register
+  console.log(`Loaded ${slashJSON.length} slash commands.`);
 }
 
 function safeReadDir(p: string): string[] {

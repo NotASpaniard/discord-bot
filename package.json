@@ -7,7 +7,12 @@
         "dev": "tsx watch index.ts",
         "start": "node dist/index.js",
         "build": "tsc -p tsconfig.json",
-        "register": "tsx tools/registerSlash.ts"
+        "register": "tsx tools/registerSlash.ts",
+        "clear": "tsx tools/clearCommands.ts",
+        "control": "powershell -ExecutionPolicy Bypass -File scripts/bot-control.ps1",
+        "bot:start": "powershell -ExecutionPolicy Bypass -File scripts/bot-control.ps1 -Action start",
+        "bot:stop": "powershell -ExecutionPolicy Bypass -File scripts/bot-control.ps1 -Action stop",
+        "bot:status": "powershell -ExecutionPolicy Bypass -File scripts/bot-control.ps1 -Action status"
     },
     "engines": {
         "node": ">=18.17"

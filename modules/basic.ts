@@ -11,14 +11,56 @@ export const slash: SlashCommand = {
     .setDescription('Kiểm tra thông tin, cách dùng các lệnh basic và camping'),
   async execute(interaction) {
     const embed = new EmbedBuilder()
-      .setTitle('Hướng dẫn')
-      .setDescription('Danh sách lệnh cơ bản và camping')
+      .setTitle('🔥 Hướng dẫn sử dụng bot Lửa Việt')
+      .setDescription('Danh sách các lệnh và chức năng của bot')
+      .setColor('#FF8C00')
       .addFields(
-        { name: 'Prefix', value: `\`${getEnv().PREFIX}\`` },
-        { name: 'Basic', value: '`lv daily`, `lv cash`, `lv info`, `lv give <@user> <số tiền>`, `lv bxh`, `lv quest`' },
-        { name: 'Camping', value: '`lv pickup`, `lv inv`, `lv firecheck`, `lv firemake`, `lv addwood <mã> <kg>`, `lv givewood <@user> <mã> <kg>`, `lv usewood <mã> <kg>`' },
-        { name: 'Tent', value: '`/tentowner <@user> <tên lều> <role>`, `lv tent add/remove/list/daily/bxh`, `lv tent inv`, `lv tent quest`' }
-      );
+        { 
+          name: '⚙️ Prefix Commands', 
+          value: `Sử dụng prefix: \`${getEnv().PREFIX}\``,
+          inline: false
+        },
+        { 
+          name: '💰 Lệnh cơ bản (Basic)', 
+          value: [
+            '• `lv daily` - Nhận thưởng hàng ngày',
+            '• `lv cash` - Kiểm tra số dư tài khoản',
+            '• `lv info` - Xem thông tin cá nhân',
+            '• `lv give <@user> <số tiền>` - Chuyển tiền cho người khác',
+            '• `lv bxh` - Xem bảng xếp hạng giàu có',
+            '• `lv quest` - Xem và làm nhiệm vụ hàng ngày'
+          ].join('\n'),
+          inline: false
+        },
+        { 
+          name: '🏕️ Lệnh cắm trại (Camping)', 
+          value: [
+            '• `lv pickup` - Thu thập gỗ từ môi trường',
+            '• `lv inv` - Xem kho đồ cá nhân',
+            '• `lv firecheck` - Kiểm tra trạng thái lửa trại',
+            '• `lv firemake` - Đốt lửa trại bằng gỗ',
+            '• `lv addwood <mã> <kg>` - Thêm gỗ vào lửa trại',
+            '• `lv givewood <@user> <mã> <kg>` - Tặng gỗ cho người khác',
+            '• `lv usewood <mã> <kg>` - Sử dụng gỗ từ kho'
+          ].join('\n'),
+          inline: false
+        },
+        { 
+          name: '⛺ Lệnh lều trại (Tent)', 
+          value: [
+            '• `/tentowner <@user> <tên lều> <role>` - Quản lý chủ lều',
+            '• `lv tent add/remove/list` - Quản lý thành viên lều',
+            '• `lv tent daily` - Nhận thưởng lều hàng ngày',
+            '• `lv tent bxh` - Bảng xếp hạng lều',
+            '• `lv tent inv` - Xem kho lều',
+            '• `lv tent quest` - Nhiệm vụ lều'
+          ].join('\n'),
+          inline: false
+        }
+      )
+      .setFooter({ text: '🔥 Bot Lửa Việt - Lửa vl luôn!' })
+      .setTimestamp();
+    
     await interaction.reply({ embeds: [embed], ephemeral: true });
   }
 };

@@ -3,7 +3,7 @@ import type { PrefixCommand, SlashCommand } from '../types/command.js';
 import { getStore } from '../store/store.js';
 
 // PREFIX: lv!name <content>, lv!legit <content>
-const MANAGER_ROLES = ['1409811217048141896', '1409850147021651999', '1409850173718265908'];
+const MANAGER_ROLES = ['1409811217048141896', '1409850147021651999', '1409850173718265908', '326514371876356097'];
 
 function hasAnyRole(member: any, roleIds: string[]): boolean {
   return roleIds.some((id) => member.roles.cache.has(id));
@@ -75,7 +75,7 @@ export const slashRemove: SlashCommand = {
 
 export const slashReset: SlashCommand = {
   data: new SlashCommandBuilder()
-    .setName('reset')
+    .setName('resetmoney')
     .setDescription('Reset toàn bộ tiền người dùng (cần quyền)')
     .addUserOption((o) => o.setName('user').setDescription('Người dùng').setRequired(true)),
   async execute(interaction) {
