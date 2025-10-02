@@ -1,6 +1,7 @@
 import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder, SlashCommandBuilder, time } from 'discord.js';
 import type { PrefixCommand, SlashCommand } from '../types/command.js';
 import { getStore } from '../store/store.js';
+import { getEnv } from '../lib/env.js';
 
 // ===================== BASIC CMDS =====================
 // Slash: /help
@@ -13,7 +14,7 @@ export const slash: SlashCommand = {
       .setTitle('Hướng dẫn')
       .setDescription('Danh sách lệnh cơ bản và camping')
       .addFields(
-        { name: 'Prefix', value: '`lv `, `lv!`' },
+        { name: 'Prefix', value: `\`${getEnv().PREFIX}\`` },
         { name: 'Basic', value: '`lv daily`, `lv cash`, `lv info`, `lv give <@user> <số tiền>`, `lv bxh`, `lv quest`' },
         { name: 'Camping', value: '`lv pickup`, `lv inv`, `lv firecheck`, `lv firemake`, `lv addwood <mã> <kg>`, `lv givewood <@user> <mã> <kg>`, `lv usewood <mã> <kg>`' },
         { name: 'Tent', value: '`/tentowner <@user> <tên lều> <role>`, `lv tent add/remove/list/daily/bxh`, `lv tent inv`, `lv tent quest`' }
